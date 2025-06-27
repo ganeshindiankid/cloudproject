@@ -1,14 +1,15 @@
-from flask import Flask, send_from_directory
+import http.server
+import socketserver
+import os
 
-app = Flask(__name__, static_folder='static')
+PORT = 8000
+DIRECTORY = "New folder"
 
-@app.route('/')
-def root():
-    return send_from_directory('static', 'index.html')
+os.chdir(DIRECTORY)
 
-@app.route('/<path:path>')
-def static_file(path):
-    return send_from_directory('static', path)
+Handler = http.server.SimpleHTTPRequestHandler
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print(f"Serving at http://localhost:{PORT}")
+    httpd.serve_forever()
+
