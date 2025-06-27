@@ -1,0 +1,141 @@
+
+body {
+  margin: 0;
+  font-family:  'Georgia', serif;
+  background-color: #f4f1e9;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #3b2f2f;
+  line-height: 1.7;
+}
+
+.container {
+  background-color: rgba(255, 248, 220, 0.8);
+  padding: 30px;
+  min-height: 100vh;
+  border-left: 10px solid #8b5a2b;
+  border-right: 10px solid #8b5a2b;
+  box-shadow: 0 0 15px #5c4422;
+}
+
+header {
+  text-align: center;
+  border-bottom: 4px double #8b5a2b;
+  padding-bottom: 10px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0.5em 0;
+  font-family: 'Trebuchet MS', serif;
+}
+
+nav {
+  margin: 15px 0;
+}
+
+nav a {
+  color: #8b0000;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #8b0000;
+}
+
+main {
+  padding: 20px;
+}
+
+section img {
+  max-width: 100%;
+  height: auto;
+  margin: 12px 0;
+  border: 3px solid #8b5a2b;
+  box-shadow: 3px 3px 6px #999;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fffaf0;
+  border: 2px solid #8b5a2b;
+  border-radius: 8px;
+  padding: 18px;
+  max-width: 300px;
+  box-shadow: 2px 2px 5px #444;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  text-align: center;
+  padding: 12px;
+  margin-top: 30px;
+  font-style: Verdana;
+  border-top: 2px dashed #8b5a2b;
+}
+/* Animation Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to headings */
+header h1 {
+  animation: slideInTop 1s ease-out;
+}
+
+/* Fade in sections */
+section {
+  animation: fadeUp 1.2s ease-in-out;
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image zoom hover */
+.grid img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid a:hover img {
+  transform: scale(1.03);
+}
